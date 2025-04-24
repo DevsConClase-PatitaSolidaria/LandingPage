@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - Patita Solidaria</title>
+    <link rel="stylesheet" href="form.css" />
+    <script src="scripts/register.js"></script>
+  </head>
+  <body>
+    <section class="form-container">
+      <h1>¡Únete a Patita Solidaria!</h1>
+      <div class="social-login">
+        <button class="btn google">Acceder con Google</button>
+        <button class="btn facebook">Continuar con Facebook</button>
+      </div>
+      <hr class="separator" />
+      <form id="registerForm">
+        <input type="text" placeholder="Nombre" required />
+        <input type="text" placeholder="Apellidos" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          required
+        />
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirmar contraseña"
+          required
+        />
+        <label class="checkbox">
+          <input type="checkbox" id="terms" required /> He leído y acepto los
+          <a href="#">términos y condiciones</a>
+        </label>
+        <button type="submit" class="btn primary">Crear cuenta</button>
+      </form>
+      <p class="link">
+        ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
+      </p>
+    </section>
+  </body>
+</html>

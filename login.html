@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Patita Solidaria</title>
+    <link rel="stylesheet" href="form.css" />
+    <script src="scripts/login.js"></script>
+  </head>
+  <body>
+    <section class="form-container">
+      <h1>Iniciar sesión</h1>
+      <p>¡Nos alegra tenerte de vuelta!</p>
+
+      <div class="social-login">
+        <button class="btn google">Acceder con Google</button>
+        <button class="btn facebook">Continuar con Facebook</button>
+      </div>
+
+      <hr class="separator" />
+
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Contraseña"
+          required
+        />
+        <a href="#" class="link">¿Has olvidado la contraseña?</a>
+        <button type="submit" class="btn primary">Iniciar sesión</button>
+      </form>
+
+      <p class="link">
+        ¿Aún no tienes cuenta? <a href="register.html">Regístrate</a>
+      </p>
+    </section>
+  </body>
+</html>
