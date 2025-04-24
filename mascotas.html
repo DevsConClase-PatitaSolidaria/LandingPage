@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mascotas disponibles - Patita Solidaria</title>
+    <link rel="stylesheet" href="mascotas.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/pata_solidaria.png" alt="Logo" class="logo" />
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="dar_adopcion.html">Dar en adopción</a>
+        <a href="login.html" class="btn primary">Iniciar sesión</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- ASIDE: Filtros -->
+      <aside class="filtros">
+        <h3>Filtrar por</h3>
+
+        <div class="filtro">
+          <div class="filtro-titulo">
+            Nivel de actividad <span class="toggle">+</span>
+          </div>
+          <div class="filtro-opciones">
+            <label
+              ><input type="checkbox" name="actividad" value="alta" />
+              Alta</label
+            >
+            <label
+              ><input type="checkbox" name="actividad" value="media" />
+              Media</label
+            >
+            <label
+              ><input type="checkbox" name="actividad" value="baja" />
+              Baja</label
+            >
+          </div>
+        </div>
+
+        <div class="filtro">
+          <div class="filtro-titulo">Peso <span class="toggle">+</span></div>
+          <div class="filtro-opciones">
+            <label
+              ><input type="checkbox" name="peso" value="ligero" />
+              Ligero</label
+            >
+            <label
+              ><input type="checkbox" name="peso" value="mediano" />
+              Mediano</label
+            >
+            <label
+              ><input type="checkbox" name="peso" value="pesado" />
+              Pesado</label
+            >
+          </div>
+        </div>
+
+        <div class="filtro">
+          <div class="filtro-titulo">Tamaño <span class="toggle">+</span></div>
+          <div class="filtro-opciones">
+            <label
+              ><input type="checkbox" name="tamaño" value="pequeño" />
+              Pequeño</label
+            >
+            <label
+              ><input type="checkbox" name="tamaño" value="mediano" />
+              Mediano</label
+            >
+            <label
+              ><input type="checkbox" name="tamaño" value="grande" />
+              Grande</label
+            >
+          </div>
+        </div>
+
+        <div class="filtro">
+          <div class="filtro-titulo">
+            Largo de pelo <span class="toggle">+</span>
+          </div>
+          <div class="filtro-opciones">
+            <label
+              ><input type="checkbox" name="pelo" value="corto" /> Corto</label
+            >
+            <label
+              ><input type="checkbox" name="pelo" value="largo" /> Largo</label
+            >
+          </div>
+        </div>
+
+        <div class="filtro">
+          <div class="filtro-titulo">Sexo <span class="toggle">+</span></div>
+          <div class="filtro-opciones">
+            <label
+              ><input type="checkbox" name="sexo" value="macho" /> Macho</label
+            >
+            <label
+              ><input type="checkbox" name="sexo" value="hembra" />
+              Hembra</label
+            >
+          </div>
+        </div>
+
+        <div class="filtro">
+          <div class="filtro-titulo">Edad <span class="toggle">+</span></div>
+          <div class="filtro-opciones">
+            <label
+              ><input type="checkbox" name="edad" value="cachorro" />
+              Cachorro</label
+            >
+            <label
+              ><input type="checkbox" name="edad" value="adulto" />
+              Adulto</label
+            >
+            <label
+              ><input type="checkbox" name="edad" value="anciano" />
+              Anciano</label
+            >
+          </div>
+        </div>
+
+        <div class="limpiar-filtros-wrapper">
+          <button id="limpiarFiltros" class="btn primary">
+            Limpiar filtros
+          </button>
+        </div>
+      </aside>
+
+      <!-- SECTION: Contenido -->
+      <section class="contenido">
+        <div class="busqueda-orden">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar por nombre..."
+          />
+
+          <div class="ordenar">
+            <label for="ordenarSelect">Ordenar por</label>
+            <select id="ordenarSelect">
+              <option value="az">A - Z</option>
+              <option value="za">Z - A</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="galeria" id="galeriaMascotas"></div>
+      </section>
+    </main>
+
+    <script src="scripts/mascotas.js"></script>
+    <script src="scripts/mascotasData.js"></script>
+  </body>
+</html>

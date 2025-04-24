@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patita Solidaria</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="assets/img/pata_solidaria.png"
+          alt="Logo Patita Solidaria"
+          class="logo"
+        />
+      </a>
+
+      <!-- Ícono menú hamburguesa -->
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <!-- Navegación principal -->
+      <nav class="nav" id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#funciona">¿Cómo funciona?</a>
+        <a href="#diferentes">¿Por qué somos diferentes?</a>
+        <a href="#perfiles">Perfiles</a>
+        <a href="#cta">Únete</a>
+
+        <!-- Acciones -->
+        <div class="actions">
+          <a href="login.html" class="btn primary">Iniciar sesión</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-text">
+        <h1>Adopta con el corazón,<br />pero con información</h1>
+        <p>
+          Conecta con refugios, conoce el historial médico de cada mascota y
+          toma decisiones informadas.
+        </p>
+        <div class="hero-buttons">
+          <a href="mascotas.html" class="btn primary"
+            >Ver mascotas disponibles</a
+          >
+          <a href="login.html" class="btn secondary"
+            >Soy refugio / rescatista</a
+          >
+        </div>
+      </div>
+      <img
+        src="assets/img/perro_sentado.png"
+        alt="Perro sentado"
+        class="hero-img"
+      />
+    </section>
+
+    <!-- ¿Quiénes somos? -->
+    <section class="quienes-somos fade-in" id="funciona">
+      <div class="imagen">
+        <img src="assets/img/banner_quienes_somos.png" alt="¿Quiénes somos?" />
+      </div>
+      <div class="texto">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+          Somos una comunidad que conecta a adoptantes responsables con refugios
+          y rescatistas en todo el Perú. Creemos en la adopción informada y
+          transparente.
+        </p>
+      </div>
+    </section>
+
+    <!-- ¿Por qué somos diferentes? -->
+    <section class="diferentes" id="diferentes">
+      <h2>¿Por qué somos diferentes?</h2>
+      <p class="subtexto">
+        Creamos un ecosistema digital para fomentar la adopción responsable, con
+        herramientas útiles y accesibles.
+      </p>
+      <div class="cards-diferentes">
+        <div class="card-diferente">
+          <p class="emoji">🔍</p>
+          <h3>Filtros inteligentes</h3>
+          <p>Encuentra mascotas según edad, tamaño, salud y más.</p>
+        </div>
+        <div class="card-diferente">
+          <p class="emoji">🤝</p>
+          <h3>Red de refugios</h3>
+          <p>Conecta con centros verificados y donaciones seguras.</p>
+        </div>
+        <div class="card-diferente">
+          <p class="emoji">📅</p>
+          <h3>Fichas informativas</h3>
+          <p>Conoce en detalle a cada mascota, con imágenes y videos.</p>
+        </div>
+        <div class="card-diferente">
+          <p class="emoji">❤️</p>
+          <h3>Seguimiento responsable</h3>
+          <p>Garantizamos el bienestar post-adopción con seguimiento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perfiles -->
+    <section class="perfiles" id="perfiles">
+      <h2>Tipos de perfiles</h2>
+      <div class="cards-perfiles">
+        <div class="perfil-card adoptante">
+          <h3>👨‍👩‍👧‍👦 Adoptantes</h3>
+          <p>
+            Tenemos fichas informativas para el cuidado de tu futura mascota.
+          </p>
+          <a href="registro.html" class="btn primary">Registrarme</a>
+        </div>
+        <div class="perfil-card refugio">
+          <h3>🏢 Refugios</h3>
+          <p>Digitaliza tus procesos y visibiliza tus puntos de donación.</p>
+          <a href="registro.html" class="btn primary">Registrarme</a>
+        </div>
+        <div class="perfil-card rescatista">
+          <h3>🚨 Rescatistas</h3>
+          <p>Publica mascotas encontradas fácilmente y accede a soporte.</p>
+          <a href="registro.html" class="btn primary">Registrarme</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner" id="cta">
+      <div class="cta-box">
+        <div class="cta-texto">
+          <h3>Únete a nuestra comunidad Patitas Solidarias</h3>
+          <p>
+            Conecta con refugios, encuentra a tu compañero ideal y apoya la
+            adopción responsable en el Perú.
+          </p>
+        </div>
+        <a href="registro.html" class="btn primary">Registrarse</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+      <div class="footer-content">
+        <div class="footer-col">
+          <img src="assets/img/pata_solidaria.png" alt="Logo" class="logo" />
+          <p>© 2025 Patita Solidaria - Todos los derechos reservados</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <a href="#inicio">Inicio</a>
+          <a href="#funciona">¿Cómo funciona?</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos y condiciones</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Una iniciativa con amor por los animales 💛
+      </div>
+    </footer>
+
+    <!-- Overlay menú -->
+    <div id="overlay" class="menu-overlay"></div>
+
+    <!-- Script menú hamburguesa -->
+    <script src="scripts/hamburger.js"></script>
+  </body>
+</html>

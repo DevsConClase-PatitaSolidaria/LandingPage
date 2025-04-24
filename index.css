@@ -1,0 +1,760 @@
+/* --------------------------------------------------
+   Estilos base generales
+-------------------------------------------------- */
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+  color: #333;
+  line-height: 1.6;
+  max-width: 100vw;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+/* Animación de entrada al menú */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav.active {
+  display: flex;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* --------------------------------------------------
+   Contenedor general y centrado de contenido
+-------------------------------------------------- */
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+   Encabezado (Header) fijo y con hover
+-------------------------------------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #588157;
+  padding: 0.4rem 1.5rem;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  max-height: 160%;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-bottom: 4px; /* espacio para la línea */
+  transition: color 0.3s;
+}
+
+.nav a:not(.btn)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #f4a261;
+  transition: width 0.3s ease;
+}
+
+.nav a:not(.btn):hover::after {
+  width: 100%;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: #f4a261;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actions input {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.actions input:focus {
+  box-shadow: 0 0 0 2px rgba(244, 162, 97, 0.4);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #47664a;
+    z-index: 1000;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 0.4rem 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .actions input,
+  .btn.primary {
+    width: 90%;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+}
+
+/* --------------------------------------------------
+   Sección Hero (inicio destacado)
+-------------------------------------------------- */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: transparent;
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  max-width: 500px;
+  flex: 1;
+}
+
+.hero-text h1 {
+  color: #588157;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Estilos mejorados solo para los botones del hero */
+.hero-buttons .btn.primary {
+  background-color: #f4a261;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.hero-buttons .btn.primary:hover {
+  background-color: #e48c3f;
+  transform: translateY(-1px);
+}
+
+.hero-buttons .btn.secondary {
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f4a261;
+  border: 2px solid #f4a261;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn.secondary:hover {
+  background-color: #fef2e6;
+  transform: translateY(-1px);
+}
+
+.hero-img {
+  width: 400px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------
+   Sección "¿Quiénes somos?"
+-------------------------------------------------- */
+.quienes-somos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-direction: row; /* imagen izquierda */
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.quienes-somos .imagen {
+  flex: 1;
+  text-align: center;
+}
+
+.quienes-somos .imagen img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+.quienes-somos .texto {
+  flex: 1;
+  text-align: left;
+}
+
+.quienes-somos .texto h2 {
+  color: #588157;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.quienes-somos .texto p {
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------
+   Sección "diferentes"
+-------------------------------------------------- */
+
+.diferentes {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.diferentes h2 {
+  color: #2e2e2e;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.diferentes .subtexto {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.cards-diferentes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card-diferente {
+  background-color: #fafafa;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 1.2rem;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card-diferente:hover {
+  transform: translateY(-5px);
+}
+
+.card-diferente .emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-diferente h3 {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-diferente p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --------------------------------------------------
+   Sección "perfiles"
+-------------------------------------------------- */
+
+.perfiles {
+  padding: 4rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.perfiles h2 {
+  font-size: 2.2rem;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.cards-perfiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.perfil-card {
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.perfil-card:hover {
+  transform: translateY(-5px);
+}
+
+.perfil-card h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.perfil-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .cards-perfiles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perfil-card {
+    width: 90%;
+  }
+}
+
+/* --------------------------------------------------
+   Sección "CTA"
+-------------------------------------------------- */
+
+.cta-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: white;
+}
+
+.cta-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.cta-texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.cta-texto h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.cta-texto p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .cta-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------
+   Pie de página (Footer)
+-------------------------------------------------- */
+.footer {
+  background-color: #47664a;
+  color: white;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 80px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+  margin: 1rem;
+}
+
+.footer-col img {
+  max-height: 130px;
+  height: auto;
+  width: auto;
+  margin-bottom: 0;
+  object-fit: contain;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-col a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-col a:hover {
+  color: #f4a261;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-col {
+    padding: 1rem 0;
+  }
+}
+
+/* --------------------------------------------------
+   Botón "Iniciar sesión" exclusivo para menú móvil
+-------------------------------------------------- */
+.login-mobile {
+  display: none;
+  margin-top: 2rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #f4a261;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .login-mobile {
+    display: block;
+  }
+}
+
+/* Muestra el menú normalmente en pantallas grandes */
+@media (min-width: 769px) {
+  .nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    background-color: transparent;
+    position: static;
+    padding: 0;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-overlay {
+    display: none !important;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.actions .btn,
+.btn.primary,
+.btn.secondary,
+.cta-btn,
+.perfil-card a.btn {
+  text-decoration: none;
+}
+
+/* ----------------------------------------------
+   Estilo específico para botón móvil de login
+---------------------------------------------- */
+.login-mobile {
+  display: none;
+  margin-top: 2rem;
+  padding: 0.6rem 1.2rem;
+  width: fit-content;
+  align-self: center;
+  background-color: #f4a261;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .login-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .login-mobile {
+    display: none !important;
+  }
+}
+
+/* =============================================
+   Estilos globales mejorados para botones
+============================================= */
+
+/* Botón primario general */
+.btn.primary {
+  background-color: #f4a261;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn.primary:hover {
+  background-color: #e48c3f;
+  transform: translateY(-1px);
+}
+
+/* Botón secundario general */
+.btn.secondary {
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f4a261;
+  border: 2px solid #f4a261;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.secondary:hover {
+  background-color: #fef2e6;
+  transform: translateY(-1px);
+}
+
+/* Botón de registro (aplica también a .perfil-card a.btn) */
+.btn-registro,
+.perfil-card a.btn {
+  background-color: #a3b18a;
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.btn-registro:hover,
+.perfil-card a.btn:hover {
+  background-color: #819d6c;
+  transform: translateY(-2px);
+}
+
+/* CTA botón */
+.cta-btn {
+  background-color: #588157;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #3c543c;
+  transform: translateY(-1px);
+}
